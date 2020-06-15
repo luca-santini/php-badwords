@@ -4,20 +4,17 @@
 - Stampate a schermo il testo censurato all'interno di un paragrafo e la lunghezza del paragrafo stesso. -->
 <?php
 // creo una variabile con del testo
-$quote = "The original idea of the web was that it should be a collaborative space where you can communicate through sharing information.";
+$string = "You should eat fruits, vegetables, and meat every day.";
 // censurate una "badword" che viene passata in GET con *** (3 simboli di asterico).
-$bad_words = array("web","space");
-$good_words = array("world wide web","enviroment");
-$new_quote = str_replace($bad_words, $good_words,  $quote)
+$new_string = str_replace("meat", "***", $string);
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title></title>
+        <title>Bad word</title>
     </head>
     <body>
-        <p> Original Quote: <?php echo $quote ?> </p>
-        <p> Modified Quote: <?php echo $new_quote ?> </p>
+        <p> <?php echo $new_string ?> </p>
     </body>
 </html>
