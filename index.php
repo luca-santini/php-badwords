@@ -5,8 +5,10 @@
 <?php
 // creo una variabile con del testo
 $string = "You should eat fruits, vegetables, and meat every day.";
-// censurate una "badword" che viene passata in GET con *** (3 simboli di asterico).
-$new_string = str_replace("meat", "***", $string);
+// censurate una "badword" che viene passata in GET con la stringa ***.
+$bad_word = $_GET['meat'];
+$new_word = "***";
+$new_string = str_replace($bad_word, $new_word, $string);
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
