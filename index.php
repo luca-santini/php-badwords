@@ -1,14 +1,11 @@
-<!-- Si tratta di un censuratore rudimentale:
-- predisponete una variabile contenente un breve testo,
-- poi tramite le funzioni sulle stringhe di php censurate una "badword" che viene passata in GET con *** (3 simboli di asterico).
-- Stampate a schermo il testo censurato all'interno di un paragrafo e la lunghezza del paragrafo stesso. -->
 <?php
 // creo una variabile con del testo
 $string = "You should eat fruits, vegetables, and meat every day.";
 // censurate una "badword" che viene passata in GET con la stringa ***.
-$bad_word = $_GET['meat'];
+$badword = $_GET['word'];
 $new_word = "***";
-$new_string = str_replace($bad_word, $new_word, $string);
+$new_string = str_replace($badword, $new_word, $string);
+$lenght = strlen($new_string);
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -18,5 +15,8 @@ $new_string = str_replace($bad_word, $new_word, $string);
     </head>
     <body>
         <p> <?php echo $new_string ?> </p>
+        <!-- Stampo a schermo il testo censurato all'interno di un paragrafo e la lunghezza del paragrafo stesso. -->
+        <p> <?php echo $badword ?> </p>
+        <p> <?php echo $lenght ?> </p>
     </body>
 </html>
